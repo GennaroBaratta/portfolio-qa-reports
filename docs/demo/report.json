@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-06T22:51:23.012744+00:00",
+  "simulated": true,
+  "scope": {
+    "simulated": true,
+    "sites": [
+      "https://demo.example/"
+    ]
+  },
+  "sites": [
+    {
+      "name": "Studio Juniper (synthetic fixture)",
+      "url": "https://demo.example/",
+      "authorized": true
+    }
+  ],
+  "limits": {
+    "max_pages": 5,
+    "max_checks": 30,
+    "max_bytes": 262144,
+    "timeout": 8,
+    "min_interval": 1,
+    "max_seconds": 120
+  },
+  "observations": [
+    {
+      "site": "Studio Juniper (synthetic fixture)",
+      "kind": "simulated page",
+      "url": "https://demo.example/",
+      "status": 200
+    },
+    {
+      "site": "Studio Juniper (synthetic fixture)",
+      "kind": "simulated resource",
+      "url": "https://demo.example/contact",
+      "status": 404
+    },
+    {
+      "site": "Studio Juniper (synthetic fixture)",
+      "kind": "simulated resource",
+      "url": "https://demo.example/images/team.jpg",
+      "status": 404
+    }
+  ],
+  "findings": [
+    {
+      "id": "6459955a6432d57cf6cb",
+      "code": "broken_link",
+      "page": "https://demo.example/",
+      "target": "https://demo.example/contact",
+      "severity": "error",
+      "message": "Simulated contact link returned HTTP 404."
+    },
+    {
+      "id": "8a33356eda7329cc00c7",
+      "code": "broken_image",
+      "page": "https://demo.example/",
+      "target": "https://demo.example/images/team.jpg",
+      "severity": "error",
+      "message": "Simulated team image returned HTTP 404."
+    },
+    {
+      "id": "7171cc0e9a3aaded8dc4",
+      "code": "noindex",
+      "page": "https://demo.example/services",
+      "target": "https://demo.example/services",
+      "severity": "warning",
+      "message": "Simulated services page requests no indexing; confirm intent."
+    }
+  ],
+  "changes": {
+    "new": [],
+    "resolved": [],
+    "unverified": [],
+    "persisting": [
+      {
+        "id": "6459955a6432d57cf6cb",
+        "code": "broken_link",
+        "page": "https://demo.example/",
+        "target": "https://demo.example/contact",
+        "severity": "error",
+        "message": "Simulated contact link returned HTTP 404."
+      },
+      {
+        "id": "7171cc0e9a3aaded8dc4",
+        "code": "noindex",
+        "page": "https://demo.example/services",
+        "target": "https://demo.example/services",
+        "severity": "warning",
+        "message": "Simulated services page requests no indexing; confirm intent."
+      },
+      {
+        "id": "8a33356eda7329cc00c7",
+        "code": "broken_image",
+        "page": "https://demo.example/",
+        "target": "https://demo.example/images/team.jpg",
+        "severity": "error",
+        "message": "Simulated team image returned HTTP 404."
+      }
+    ]
+  }
+}
